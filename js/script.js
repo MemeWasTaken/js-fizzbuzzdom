@@ -24,25 +24,35 @@
 
 // SECTION MILESTONE 2 //
     // 1) Inserire in index.html un container.
-    const ulJs = document.querySelector(".container")
+    const ulJs = document.querySelector(".container");
+    
     // 2) "Appendere" elemento con numero/stringa nel DOM.
     for (let i = 1; i <= 100; i++) {
         
-
+        const liJs = document.createElement('li');
+        
         if (!((i % 3 == 0) || (i % 5 === 0))) {
-            ulJs.innerHTML += '<li>' + i + '</li>';
+            // ulJs.innerHTML += '<li>' + i + '</li>';
+            liJs.append(i);
+            ulJs.append(liJs);
             console.log(i);
 
         } else if ((i % 3 == 0) && (i % 5 === 0)) {
-            ulJs.innerHTML += '<li> FizzBuzz </li>';
+            // ulJs.innerHTML += '<li> FizzBuzz </li>';
+            liJs.append('FizzBuzz');
+            ulJs.append(liJs);
             console.log(i, 'FizzBuzz');
             
         } else if (i % 5 === 0) {
-            ulJs.innerHTML += '<li> Buzz </li>';
+            // ulJs.innerHTML += '<li> Buzz </li>';
+            liJs.append('Buzz');
+            ulJs.append(liJs);
             console.log(i, 'Buzz');
             
         } else if (i % 3 === 0) {
-            ulJs.innerHTML += '<li> Fizz </li>';
+            // ulJs.innerHTML += '<li> Fizz </li>';
+            liJs.append('Fizz');
+            ulJs.append(liJs);
             console.log(i, 'Fizz');
         }
     }
