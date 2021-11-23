@@ -25,37 +25,41 @@
 // SECTION MILESTONE 2 //
     // 1) Inserire in index.html un container.
     const ulJs = document.querySelector(".container");
-    const f = 'Fizz';
-    const b = 'Buzz'
+    const f = 'fizz';
+    const b = 'buzz'
 
     // 2) "Appendere" elemento con numero/stringa nel DOM.
     for (let i = 1; i <= 100; i++) {
         
         const liJs = document.createElement('li');
         
-        if (!((i % 3 == 0) || (i % 5 === 0))) {
-            // ulJs.innerHTML += '<li>' + i + '</li>';
-            liJs.append(i);
-            ulJs.append(liJs);
-            console.log(i);
-
-        } else if ((i % 3 == 0) && (i % 5 === 0)) {
+        if ((i % 3 == 0) && (i % 5 === 0)) {
             // ulJs.innerHTML += '<li> FizzBuzz </li>';
             liJs.append(f, b);
             ulJs.append(liJs);
+            liJs.className = 'fizz-buzz';   // SECTION MILESTONE 3 //
             console.log(i, 'FizzBuzz');
             
         } else if (i % 5 === 0) {
             // ulJs.innerHTML += '<li> Buzz </li>';
             liJs.append(b);
             ulJs.append(liJs);
+            liJs.className = 'buzz';    // SECTION MILESTONE 3 //
             console.log(i, 'Buzz');
             
         } else if (i % 3 === 0) {
             // ulJs.innerHTML += '<li> Fizz </li>';
             liJs.append(f);
             ulJs.append(liJs);
+            liJs.className = 'fizz';    // SECTION MILESTONE 3 //
             console.log(i, 'Fizz');
+
+        } else {
+             // ulJs.innerHTML += '<li>' + i + '</li>';
+             liJs.append(i);
+             ulJs.append(liJs);
+            liJs.className = 'number';  // SECTION MILESTONE 3 //
+            console.log(i);
         }
     }
 
