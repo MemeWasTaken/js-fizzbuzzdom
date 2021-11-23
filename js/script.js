@@ -25,7 +25,9 @@
 // SECTION MILESTONE 2 //
     // 1) Inserire in index.html un container.
     const ulJs = document.querySelector(".container");
-    
+    const f = 'Fizz';
+    const b = 'Buzz'
+
     // 2) "Appendere" elemento con numero/stringa nel DOM.
     for (let i = 1; i <= 100; i++) {
         
@@ -39,19 +41,19 @@
 
         } else if ((i % 3 == 0) && (i % 5 === 0)) {
             // ulJs.innerHTML += '<li> FizzBuzz </li>';
-            liJs.append('FizzBuzz');
+            liJs.append(f, b);
             ulJs.append(liJs);
             console.log(i, 'FizzBuzz');
             
         } else if (i % 5 === 0) {
             // ulJs.innerHTML += '<li> Buzz </li>';
-            liJs.append('Buzz');
+            liJs.append(b);
             ulJs.append(liJs);
             console.log(i, 'Buzz');
             
         } else if (i % 3 === 0) {
             // ulJs.innerHTML += '<li> Fizz </li>';
-            liJs.append('Fizz');
+            liJs.append(f);
             ulJs.append(liJs);
             console.log(i, 'Fizz');
         }
